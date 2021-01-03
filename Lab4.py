@@ -45,3 +45,44 @@ while nth <= 4000000: #while the nth term is less than 4,000,000 I will continue
         pass
 
 print (count) #our total number (it's correct)
+
+'''———'''
+##(12.26.20) Entry 2: 8:00 p.m. Start 9:40 p.m. End
+#Largest Prime Factor: Problem 3
+'''What is the largest prime factor of the number 600851475143'''
+
+# bignum = int(600851475143)
+
+
+# def prime(bignum):
+#     listprime = []
+#     for numero in range(2, bignum):
+#         if bignum % numero != 0:
+#             listprime.append(numero)
+#         else:
+#             pass
+# def largestPrime(bignum):
+#     result = []
+#     for something in range(2, bignum):
+#         if Prime(something):
+#             if bignum % something == 0:
+#                 result.append( something )
+#     return result
+
+# print (largestPrime(bignum)) GETS STUCK IN LOOP EVERYTIME — Does not work
+
+'''had to look up the different possible ways to find largest prime factors and then converted it to code here'''
+import math # in order to find the largest square root
+
+possibleNums = [] #need an empty list that we will eventually pull the factor out of
+bignum = 600851475143
+
+for numero in range(2, math.ceil(math.sqrt(bignum))): #finding the square roots of bignum that is still perfectly divisible by itself
+    # print ('printingn it' , numero) bad idea it's just printing every number lol
+    while bignum % numero == 0: #see comment on line above
+        bignum=bignum/numero #redefine what bignum is equal to each time in order to eventually find the greatest prime factor
+        possibleNums.append(numero) # every time a number is perfectly divisible by bignum it will get added to the list
+
+# print(possibleNums) #prints a list of all four of the possible numbers but we want the greatest one so print just the last one
+
+print(possibleNums[3]) #should be the greatest prime factor
