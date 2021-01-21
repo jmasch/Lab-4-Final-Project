@@ -200,8 +200,8 @@ def pythTriplet(): #define a function. I had made the error of calling on a, b, 
         for b in range(1, 1000):
             c = 1000-a-b
             # for c in range(1, 1000): #instead of including a third for loop, I just made it simple b/c c has to equal 1000-a-b
-                if a*a + b*b == c*c: #once this command returns True then the for loops stop iterating through the ranges
-                    return a*b*c #this is the triplet that will be printed out
+            if a*a + b*b == c*c: #once this command returns True then the for loops stop iterating through the ranges
+                return a*b*c #this is the triplet that will be printed out
             # print (a+b+c) #test (it equals 1000 but prints it out many times—as many times as the for loop loops)
 print (pythTriplet())
 
